@@ -23,25 +23,15 @@ public class MoverPersonaje : MonoBehaviour
                 * velocidadPersonaje * Time.deltaTime);
         }
     }
-    private void Start()
-    {
-        print("Iniciado el gato");
-        MiMetodo();
-        print(Suma());
-        SumaDosNumeros(2.5f,3);       
-       
-    }
-    private void FixedUpdate()
-    {
-        
-    }
-    private void LateUpdate()
-    {
-        
-    }
+    
     private void OnMouseDown()
     {
-
+        hp--;
+        
+        if(hp <= 0)
+        {
+            Destroy(gameObject);
+        }
         print("Gato clickeado");
     }
     private void OnMouseDrag()
@@ -71,9 +61,9 @@ public class MoverPersonaje : MonoBehaviour
         print("llame a mi metodo");
     }
 
-    public int Suma()
+    public string Suma()
     {
-        return 1;
+        return "1";
     }
     public void SumaDosNumeros(float a, float b)
     {
@@ -81,7 +71,10 @@ public class MoverPersonaje : MonoBehaviour
     }
 
     //operadores aritmeticos
-    // + - * / %
+    // + - * / % 
+    // += -= *= /=
+    //operadores de comparación
+    // == < > <= >= !=
     // Mathf
     // "hola" + " " + "mundo" == "hola mundo"
 
