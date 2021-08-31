@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class MoverPersonaje : MonoBehaviour
 {
     public float velocidadPersonaje = 10;
     public Transform theTransform;
     public int hp =10;
+    public SpriteRenderer theRen;
     
 
     // Update is called once per frame
@@ -16,10 +18,22 @@ public class MoverPersonaje : MonoBehaviour
         {
             theTransform.Translate(Vector3.right
                 * velocidadPersonaje * Time.deltaTime);
+            theRen.flipX = true;
         }
-        if(Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            theTransform.Translate(Vector3.up
+                * velocidadPersonaje * Time.deltaTime);            
+        }
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             theTransform.Translate(Vector3.left
+                * velocidadPersonaje * Time.deltaTime);
+            theRen.flipX = false;
+        }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            theTransform.Translate(Vector3.down
                 * velocidadPersonaje * Time.deltaTime);
         }
     }
@@ -32,7 +46,15 @@ public class MoverPersonaje : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        print("Gato clickeado");
+        else if (hp < 5)
+        {
+            transform.DOShakePosition(.5f);
+        }
+        else
+        {
+            transform.DOShakeRotation(.5f);
+        }
+        
     }
     private void OnMouseDrag()
     {
@@ -77,5 +99,13 @@ public class MoverPersonaje : MonoBehaviour
     // == < > <= >= !=
     // Mathf
     // "hola" + " " + "mundo" == "hola mundo"
+    //operadores lógicos
+    // && ||
+    // T && T => T
+    // T && F => F
+    // T || T => T
+    // T || F => T
+    // F || F => F
+    // if () else () elseif
 
 }
