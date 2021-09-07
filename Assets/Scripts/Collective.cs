@@ -5,12 +5,14 @@ using UnityEngine;
 public class Collective : MonoBehaviour
 {
     public GameObject particles;
+    public AudioSource sfx;
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             Instantiate(particles, transform.position, Quaternion.identity);
             GameManager.instance.puntaje++;
+            sfx.Play();
             Destroy(gameObject);
             //print("Gato entro a la colision");
         }
