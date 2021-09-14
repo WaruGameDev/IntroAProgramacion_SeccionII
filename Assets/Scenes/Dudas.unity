@@ -952,6 +952,7 @@ GameObject:
   - component: {fileID: 1105884816}
   - component: {fileID: 1105884815}
   - component: {fileID: 1105884818}
+  - component: {fileID: 1105884819}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -1047,6 +1048,19 @@ MonoBehaviour:
   rb: {fileID: 1105884816}
   speedCharacter: 500
   anim: {fileID: 1105884815}
+--- !u!114 &1105884819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105884813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f30ab214dd54d74abdfac63df49c9f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
 --- !u!1 &1272508084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,6 +1449,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1807987431}
   - component: {fileID: 1807987430}
+  - component: {fileID: 1807987432}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1470,6 +1485,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1807987432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807987429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b80b3d86f6480943be6c4981b1fd7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
 --- !u!1 &1836279970
 GameObject:
   m_ObjectHideFlags: 0
