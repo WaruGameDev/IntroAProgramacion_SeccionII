@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8106202525091719788}
   m_Layer: 0
   m_Name: laserBlue02
-  m_TagString: Untagged
+  m_TagString: BulletPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,5 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 999559cd01a9f274d80a90a7a12401b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedBullet: 100
+  speedBullet: 50
   direction: {x: 0, y: 1}
+  damage: 1
