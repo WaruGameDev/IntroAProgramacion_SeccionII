@@ -8,6 +8,8 @@ TagManager:
   - Floor
   - Enemy
   - BulletPlayer
+  - Water
+  - Fruit
   layers:
   - Default
   - TransparentFX
