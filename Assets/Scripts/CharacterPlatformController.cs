@@ -81,7 +81,7 @@ public class CharacterPlatformController : MonoBehaviour
         }
         anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
         //anim.SetInteger("HP", HealthManager.instance.health);
-        anim.SetInteger("HP", GetComponent<Health>().health);
+        anim.SetInteger("HP", (int)GetComponent<Health>().health);
         
         if(Mathf.Abs(rb.velocity.x) > 0 && isGrounded)
         {
