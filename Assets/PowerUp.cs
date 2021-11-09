@@ -7,6 +7,7 @@ public class PowerUp : MonoBehaviour
     public enum POWER_UP_TYPE
     {
         DOUBLE_SPEED,
+        DOUBLE_CANON,
         EXPLOSIVE_BALL,
         OTHER
     }
@@ -19,11 +20,15 @@ public class PowerUp : MonoBehaviour
             switch(powerUp)
             {
                 case POWER_UP_TYPE.DOUBLE_SPEED:
-                    Destroy(gameObject);
+                   
                     PowerUpManager.instance.SpeedDouble();
                     break;
+                case POWER_UP_TYPE.DOUBLE_CANON:
+
+                    PowerUpManager.instance.DoubleCanon();
+                    break;
             }
-            
+            Destroy(gameObject);
         }
     }
 

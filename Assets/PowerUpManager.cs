@@ -16,4 +16,15 @@ public class PowerUpManager : MonoBehaviour
     {
         player.speedCanon *= 2;
     }
+    public void DoubleCanon()
+    {        
+        StartCoroutine(DoubleCanonTime());
+    }
+    IEnumerator DoubleCanonTime()
+    {
+        player.doubleCanon = true;
+        yield return new WaitForSeconds(5);
+        player.doubleCanon = false;
+        yield break;
+    }
 }

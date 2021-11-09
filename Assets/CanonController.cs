@@ -9,6 +9,8 @@ public class CanonController : MonoBehaviour
     public Transform canon;
     public float limitX, limitY;
     public float strenghtShoot = 1000;
+    public bool doubleCanon;
+    public GameObject dobleCanonObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,9 +33,41 @@ public class CanonController : MonoBehaviour
 
         if(Input.GetButtonDown("Jump"))
         {
+            ShootCanon();
+        }
+        if(doubleCanon)
+        {
+            dobleCanonObject.SetActive(true);
+        }
+        else
+        {
+            dobleCanonObject.SetActive(false);
+        }
+    }
+
+    public void ShootCanon()
+    {
+        if(!doubleCanon)
+        {
             GameObject bulletGo = Instantiate(bullet, canon.position, Quaternion.identity);
             bulletGo.GetComponent<Rigidbody>().AddForce(canon.forward * strenghtShoot);
             Destroy(bulletGo, 5);
         }
+        else
+        {
+            Vector3 newCanonPositon = canon.position;
+            newCanonPositon.x = newCanonPositon.x + 1;
+            GameObject bulletGo = Instantiate(bullet, newCanonPositon, Quaternion.identity);
+            bulletGo.GetComponent<Rigidbody>().AddForce(canon.forward * strenghtShoot);
+            Destroy(bulletGo, 5);
+
+
+            newCanonPositon = canon.position;
+            newCanonPositon.x = newCanonPositon.x - 5;
+            GameObject bulletGo2 = Instantiate(bullet, newCanonPositon, Quaternion.identity);
+            bulletGo2.GetComponent<Rigidbody>().AddForce(canon.forward * strenghtShoot);
+            Destroy(bulletGo2, 5);
+        }
+        
     }
 }
